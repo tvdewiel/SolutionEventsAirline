@@ -40,5 +40,9 @@ namespace AirlineLibrary
         {
             return SeatsSold / Airplane.AvailableSeats;
         }
+        public override string ToString()
+        {
+            return $"[Flight] {FlightNumber},{Route},{Airplane},{SeatsSold}";
+        }
     }
 }

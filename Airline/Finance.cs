@@ -10,6 +10,7 @@ namespace AirlineLibrary
         private Dictionary<int, Dictionary<string, SortedDictionary<string, List<CateringOrder>>>> monthlyCatering = new Dictionary<int, Dictionary<string, SortedDictionary<string, List<CateringOrder>>>>();        
         public void OnFlightEvent(object source, FlightEventArgs args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Finance - onFlightEvent");
             Console.WriteLine(args.Flight);
             int year = args.Flight.DepartureDate.Year;
@@ -39,6 +40,8 @@ namespace AirlineLibrary
         }
         public void PrintFuelReport(int year)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("finance - fuel report");
             if (monthlyFlights.ContainsKey(year))
             {
                 foreach(var m in monthlyFlights[year].Keys)
@@ -49,6 +52,7 @@ namespace AirlineLibrary
         }
         public void OnCateringEvent(object source, CateringEventArgs args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Finance - onCateringEvent");
             Console.WriteLine(args.Flight);
             int year = args.Flight.DepartureDate.Year;
@@ -82,13 +86,15 @@ namespace AirlineLibrary
         }
         public void PrintCateringReport(int year)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("finance - catering report");
             if (monthlyCatering.ContainsKey(year))
             {
                 foreach (var m in monthlyCatering[year].Keys)
                 {
                     foreach (var a in monthlyCatering[year][m].Keys)
                     {
-                        Console.WriteLine($"{year},{m},{CalculateCateringCost(monthlyCatering[year][m][a])}");
+                        Console.WriteLine($"{year},{m},{a},{CalculateCateringCost(monthlyCatering[year][m][a])}");
                     }
                 }
             }

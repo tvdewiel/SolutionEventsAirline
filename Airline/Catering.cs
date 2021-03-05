@@ -11,6 +11,7 @@ namespace AirlineLibrary
         private Dictionary<string, List<CateringOrder>> orders = new Dictionary<string,List<CateringOrder>>();
         public void OnFlightEvent(object source, FlightEventArgs args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Catering - onFlightEvent");
             Console.WriteLine(args.Flight);
             PlaceOrder(args.Flight.Route.Departure, args.Flight.SeatsSold,args.Flight.DepartureDate,args.Flight);

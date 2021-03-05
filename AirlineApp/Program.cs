@@ -23,7 +23,17 @@ namespace AirlineApp
             //simulate app
             FlightReader fr = new FlightReader();
             List<Flight> flights = fr.ReadFlights();
-            foreach (var f in flights) Console.WriteLine(f);
+            foreach (var f in flights)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(f);
+                airline.AddFlight(f);
+            }
+
+            //check observers
+            sales.PrintAnalysisReport();
+            finance.PrintCateringReport(2021);
+            finance.PrintFuelReport(2021);
         }
     }
 }

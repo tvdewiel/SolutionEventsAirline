@@ -45,6 +45,7 @@ namespace AirlineLibrary
         }
         public void PrintAnalysisReport(double minOccupancy = 0.5)
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Analysis report");
             foreach (var x in AnalyseFlights(minOccupancy))
             {

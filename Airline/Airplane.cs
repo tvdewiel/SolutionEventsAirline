@@ -18,5 +18,9 @@ namespace AirlineLibrary
         public double FuelCostPerPersonPer100km { get; private set; }
         public int AvailableSeats { get; private set; }
         public double Speed { get; private set; }
+        public override string ToString()
+        {
+            return $"[Airplane] {Name},{AvailableSeats},{Speed},{FuelCostPerPersonPer100km}";
+        }
     }
 }
