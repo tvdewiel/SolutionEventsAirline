@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Airline
+namespace AirlineLibrary
 {
     public class CateringOrder
     {
+        private readonly double mealCost = 3.5;
         public CateringOrder(string airport, int numberOfMeals, DateTime cateringDate)
         {
             Airport = airport;
@@ -16,6 +17,10 @@ namespace Airline
         public string Airport { get; private set; }
         public int NumberOfMeals { get; private set; }
         public DateTime CateringDate { get; private set; }
+        public double Cost()
+        {
+            return NumberOfMeals * mealCost;
+        }
         public override string ToString()
         {
             return $"[Order]{Airport};{NumberOfMeals},{CateringDate}";

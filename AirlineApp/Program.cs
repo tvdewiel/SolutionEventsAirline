@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using AirlineLibrary;
+
+namespace AirlineApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Airline airline = new Airline();
+            Finance finance = new Finance();
+            Sales sales = new Sales();
+            Catering catering = new Catering();
+
+            //link modules with events
+            airline.FlightEvent += finance.OnFlightEvent;
+            airline.FlightEvent += sales.OnFlightEvent;
+            airline.FlightEvent += catering.OnFlightEvent;
+            catering.CateringEvent += finance.OnCateringEvent;
+
+            //simulate app
+            FlightReader fr = new FlightReader();
+            List<Flight> flights = fr.ReadFlights();
+            foreach (var f in flights) Console.WriteLine(f);
+        }
+    }
+}

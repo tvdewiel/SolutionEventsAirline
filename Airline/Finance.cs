@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Airline
+namespace AirlineLibrary
 {
     public class Finance
     {
         private Dictionary<int,Dictionary<string, List<Flight>>> monthlyFlights = new Dictionary<int,Dictionary<string, List<Flight>>>();//year/month/...
-        private Dictionary<int, Dictionary<string, Dictionary<string, List<CateringOrder>>>> monthlyCatering = new Dictionary<int, Dictionary<string, Dictionary<string, List<CateringOrder>>>>();        public void OnFlightEvent(object source, FlightEventArgs args)
+        private Dictionary<int, Dictionary<string, SortedDictionary<string, List<CateringOrder>>>> monthlyCatering = new Dictionary<int, Dictionary<string, SortedDictionary<string, List<CateringOrder>>>>();        
+        public void OnFlightEvent(object source, FlightEventArgs args)
         {
             Console.WriteLine("Finance - onFlightEvent");
             Console.WriteLine(args.Flight);
@@ -55,11 +56,11 @@ namespace Airline
             string airport = args.Order.Airport;
             if (!monthlyCatering.ContainsKey(year))
             {
-                monthlyCatering.Add(year, new Dictionary<string, Dictionary<string, List<CateringOrder>>>());
+                monthlyCatering.Add(year, new Dictionary<string, SortedDictionary<string, List<CateringOrder>>>());
             }
             if (!monthlyCatering[year].ContainsKey(month))
             {
-                monthlyCatering[year].Add(month, new Dictionary<string, List<CateringOrder>>());
+                monthlyCatering[year].Add(month, new SortedDictionary<string, List<CateringOrder>>());
             }
             if (!monthlyCatering[year][month].ContainsKey(airport))
             {
@@ -69,6 +70,28 @@ namespace Airline
             monthlyCatering[year][month][airport].Add(args.Order);
 
             Console.WriteLine("----------------");
+        }
+        private (int, double) CalculateCateringCost(List<CateringOrder> orders)
+        {
+            double cost = 0;
+            foreach (var o in orders)
+            {
+                cost += o.Cost();
+            }
+            return (orders.Count, cost);
+        }
+        public void PrintCateringReport(int year)
+        {
+            if (monthlyCatering.ContainsKey(year))
+            {
+                foreach (var m in monthlyCatering[year].Keys)
+                {
+                    foreach (var a in monthlyCatering[year][m].Keys)
+                    {
+                        Console.WriteLine($"{year},{m},{CalculateCateringCost(monthlyCatering[year][m][a])}");
+                    }
+                }
+            }
         }
     }
 }
