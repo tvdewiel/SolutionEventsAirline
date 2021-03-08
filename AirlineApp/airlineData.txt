@@ -6,3 +6,4 @@ flightnumber,date,seatssold,airplane.name,airplane.fuelcost,airplane.seats,airpl
 1005,7/3/2021,164,BA505,65,164,875,BRU,LAS,8700
 1006,7/3/2021,110,BA501,60,112,850,TXL,BRU,635
 1007,8/3/2021,88,BA502,60,112,850,ARN,BRU,1290
+1008,5/3/2021,89,BA501,60,112,850,BRU,TXL,635

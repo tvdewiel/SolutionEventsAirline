@@ -38,7 +38,7 @@ namespace AirlineLibrary
 
         public double OccupancyRate()
         {
-            return SeatsSold / Airplane.AvailableSeats;
+            return (double)SeatsSold / (double)Airplane.AvailableSeats;
         }
         public override string ToString()
         {

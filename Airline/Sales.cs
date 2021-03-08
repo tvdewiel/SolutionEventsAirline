@@ -31,19 +31,19 @@ namespace AirlineLibrary
             }
             return result / flights.Count;
         }
-        public Dictionary<Route, (double, int)> AnalyseFlights(double minOccupancy=0.5)
+        public Dictionary<Route, (double, int)> AnalyseFlights(double minOccupancy)
         {
             Dictionary<Route, (double,int)> result = new Dictionary<Route, (double,int)>();
             double tmp;
             foreach(var r in flights.Keys)
             {
                 tmp = CalcAverageOccupancyRate(flights[r]);
-                if (tmp<minOccupancy)
-                  result.Add(r, (tmp,flights.Count));
+                if (tmp<=minOccupancy)
+                  result.Add(r, (tmp,flights[r].Count));
             }
             return result;
         }
-        public void PrintAnalysisReport(double minOccupancy = 0.5)
+        public void PrintAnalysisReport(double minOccupancy = 1.0)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Analysis report");
