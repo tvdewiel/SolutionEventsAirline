@@ -35,5 +35,19 @@ namespace AirlineLibrary
         {
             CateringEvent?.Invoke(this, new CateringEventArgs { Flight = flight, Order = order }); 
         }
+        public void PrintOrderReport()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Catering report");
+            foreach (var x in orders)
+            {
+                Console.WriteLine($"Airport {x.Key}");
+                foreach (var o in x.Value)
+                {
+                    Console.WriteLine($"{o}");
+                }
+            }
+            Console.WriteLine("-----------------");
+        }
     }
 }

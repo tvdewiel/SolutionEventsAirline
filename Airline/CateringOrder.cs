@@ -23,7 +23,7 @@ namespace AirlineLibrary
         }
         public override string ToString()
         {
-            return $"[Order]{Airport};{NumberOfMeals},{CateringDate}";
+            return $"[Order]{Airport};{NumberOfMeals},{CateringDate.ToShortDateString()}";
         }
     }
 }

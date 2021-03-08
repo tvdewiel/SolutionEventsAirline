@@ -31,6 +31,7 @@ namespace AirlineApp
             }
 
             //check observers
+            catering.PrintOrderReport();
             sales.PrintAnalysisReport();
             finance.PrintCateringReport(2021);
             finance.PrintFuelReport(2021);
