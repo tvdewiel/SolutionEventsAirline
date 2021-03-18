@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AirlineLibrary.Flight" Collapsed="true">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <Members>
+      <Property Name="Airplane" Hidden="true" />
+      <Property Name="Route" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAIAAAAEgEAAARAAACAAAIAAACAAAAAAAAA=</HashCode>
+      <FileName>Flight.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Route" />
+      <Property Name="Airplane" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AirlineLibrary.Route" Collapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAEgggAAAAAAAAAAIBAAAAAAAAAQAA=</HashCode>
+      <FileName>Route.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.Sales" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAACEAAAAAAAIAAAAAAABACAAAAAAAA=</HashCode>
+      <FileName>Sales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.Airplane" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAEAgAAAAQBAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Airplane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.Airline" Collapsed="true">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <Members>
+      <Field Name="flights" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAQAIAAEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Airline.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="flights" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AirlineLibrary.Catering" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABCEAAAAAAAAAAAAAAMIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Catering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.Finance" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAABBAAAAAAAAAAAAMAAAIEAAAAEAAAAAAAA=</HashCode>
+      <FileName>Finance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.CateringOrder" Collapsed="true">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAgAAIEAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CateringOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.FlightEventArgs" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>FlightEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirlineLibrary.CateringEventArgs" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CateringEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

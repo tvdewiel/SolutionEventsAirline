@@ -21,7 +21,7 @@ namespace AirlineLibrary
         public string Departure { get; private set; }
         public string Arrival { get; private set; }
         public double Distance { get; private set; } //km
-        public List<string> StopOvers { get; private set; }
+        public List<string> StopOvers { get; private set; } = new List<string>();
         public void AddStopOver(string airport)
         {
             if (!StopOvers.Contains(airport)) StopOvers.Add(airport);
